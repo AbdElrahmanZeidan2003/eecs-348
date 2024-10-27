@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Font Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        #content {
+            background: white;
+            margin: auto;
+            padding: 20px;
+            width: 50%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        #textToStyle {
+            padding: 10px;
+            border: 2px solid black; 
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 5px;
+            margin-right: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            padding: 5px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p id="textToStyle">This is a sample text that will change color and border style based on your input.</p>
+        <label for="rgb">Enter RGB values (e.g., 255,0,0):</label>
+        <input type="text" id="rgb" placeholder="255,0,0">
+        <label for="borderWidth">Enter border width (px):</label>
+        <input type="number" id="borderWidth" placeholder="5">
+        <button onclick="applyStyles()">Apply Styles</button>
+    </div>
+
+    <script>
+        function applyStyles() {
+            var rgb = document.getElementById('rgb').value;
+            var borderWidth = document.getElementById('borderWidth').value;
+            var paragraph = document.getElementById('textToStyle');
+
+
+            paragraph.style.color = 'rgb(' + rgb + ')';
+
+            paragraph.style.borderWidth = borderWidth + 'px';
+            paragraph.style.borderColor = 'rgb(' + rgb + ')';
+        }
+    </script>
+</body>
+</html>
